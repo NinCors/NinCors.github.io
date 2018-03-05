@@ -71,6 +71,19 @@
 
     <script type="text/javascript">
 		$("#code").typewriter();
+        myAudio = new Audio('typing.mp3'); 
+        if (typeof myAudio.loop == 'boolean')
+            {
+            myAudio.loop = true;
+            }
+        else
+            {
+                myAudio.addEventListener('ended', function() {
+                this.currentTime = 0;
+                this.play();
+            }, false);
+            }
+        myAudio.play();
 	</script>
 
     <script type="text/javascript" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
